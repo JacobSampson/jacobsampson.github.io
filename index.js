@@ -7,8 +7,7 @@
     let ghRepos = [];
 
     ghRepoInfo.forEach(async ghRepo => {
-        let commitInfo = await getNumCommits(ghRepo.commits_url.slice(0, -6));
-        let commits = await commitInfo.json();
+        let numCommits = await getNumCommits(ghRepo.commits_url);
 
         ghRepos.push({
             name: ghRepo.name,
@@ -16,7 +15,7 @@
             description: ghRepo.description || "",
             language: ghRepo.language || "",
             createdDate: ghRepo.created_at,
-            numCommits: await commits.length
+            numCommits: numCommits
         });
 
         console.log(ghRepos[ghRepos.length - 1]);
@@ -26,7 +25,10 @@
 });
 
 async function getNumCommits(url) {
-    return fetch(url);
+    let commitInfo = await fetch(url.slice(0, -6));
+    let commits = await commitInfo.json();
+
+    return await commits.length;
 }
 
 // font-family: "Source Sans Pro", Helvetica, sans-serif;
