@@ -1,0 +1,68 @@
+/// 
+/// sampsonjacob.com
+/// Jacob Sampson
+/// 
+
+/* Basic */
+
+// MSIE: Required for IEMobile.
+@-ms-viewport {
+	width: device-width;
+}
+
+html {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+// MSIE: Prevents scrollbar from overlapping content.
+body {
+	-ms-overflow-style: scrollbar;
+}
+
+body {
+	height: 100%;
+
+	background-color: #ffff;
+	background-image: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../resources/images/bg.jpg");
+	background-repeat:		no-repeat,			no-repeat;
+	background-size:		cover,				cover;
+	background-position:	top left,		center center,		bottom center;
+	background-attachment:	fixed,			fixed,				fixed;
+
+	// Stops initial animations until page loads.
+	&.is-preload {
+		*, *:before, *:after {
+			animation: none !important;
+			transition: none !important;
+		}
+	}
+
+	&after {
+		content: '';
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: inherit;
+		opacity: 0;
+		z-index: 1;
+	}
+}
+
+// $palette: (
+// 	bg:					#ffffff,
+// 	bg-alt:				#e1dfe8,
+// 	fg:					#414f57,
+// 	fg-bold:			#313f47,
+// 	fg-light:			#616f77,
+// 	border:				#c8cccf,
+// 	accent1:			#ffa596,
+// 	accent2:			#00e4ff,
+// 	highlight:			#ff7496
+// );

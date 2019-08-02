@@ -1,0 +1,46 @@
+/// 
+/// sampsonjacob.com
+/// Jacob Sampson
+/// 
+
+/* Main */
+
+.main {
+    padding: 2em;
+    max-width: 100%;
+    width: 27em;
+    position: relative;
+    
+    background: white;
+    border-radius: 4px;
+    cursor: default;
+    opacity: 0.95;
+    text-align: center;
+
+    .profile {
+        position: relative;
+        display: block;
+        margin-bottom: 1.5em;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+
+            border-radius: 50%;
+            box-shadow: 0 0 0 1.5em #fff;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -2em;
+            width: calc(100% + 4em);
+            height: 1px;
+            z-index: -1;
+            background: #c8cccf;
+        }
+    }
+}
