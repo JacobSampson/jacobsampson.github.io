@@ -27,12 +27,7 @@ body {
 body {
 	height: 100%;
 
-	background-color: #ffff;
-	background-image: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../resources/images/bg.jpg");
-	background-repeat:		no-repeat,			no-repeat;
-	background-size:		cover,				cover;
-	background-position:	top left,		center center,		bottom center;
-	background-attachment:	fixed,			fixed,				fixed;
+	background-color: rgb(204, 120, 120);
 
 	// Stops initial animations until page loads.
 	&.is-preload {
@@ -54,15 +49,3 @@ body {
 		z-index: 1;
 	}
 }
-
-// $palette: (
-// 	bg:					#ffffff,
-// 	bg-alt:				#e1dfe8,
-// 	fg:					#414f57,
-// 	fg-bold:			#313f47,
-// 	fg-light:			#616f77,
-// 	border:				#c8cccf,
-// 	accent1:			#ffa596,
-// 	accent2:			#00e4ff,
-// 	highlight:			#ff7496
-// );
