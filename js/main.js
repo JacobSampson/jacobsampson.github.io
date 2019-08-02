@@ -46,11 +46,7 @@ class ghRepo {
 }
 
 (async () => {
-    let result = await fetch('https://api.github.com/users/JacobSampson/repos', {
-        headers: {
-            'Authorization': 'token ' + config.AUTH_KEY
-        }
-    });
+    let result = await fetch('https://api.github.com/users/JacobSampson/repos');
     let ghRepoInfo = await result.json();
 
     let ghRepos = [];
