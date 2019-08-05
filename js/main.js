@@ -1,10 +1,4 @@
 class ghRepo {
-    _name;
-    _url;
-    _description;
-    _language;
-    _createdDate;
-
     constructor(name, url, description, language, createdDate) {
         this._name = name;
         this._url = url;
