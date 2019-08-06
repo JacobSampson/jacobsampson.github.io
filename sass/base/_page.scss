@@ -27,7 +27,7 @@ body {
 body {
 	height: 100%;
 
-	background-color: rgb(204, 120, 120);
+	background-color: $bg;
 
 	// Stops initial animations until page loads.
 	&.is-preload {
@@ -35,17 +35,5 @@ body {
 			animation: none !important;
 			transition: none !important;
 		}
-	}
-
-	&after {
-		content: '';
-		display: block;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: inherit;
-		opacity: 0;
-		z-index: 1;
 	}
 }

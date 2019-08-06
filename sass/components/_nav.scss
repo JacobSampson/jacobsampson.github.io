@@ -1,0 +1,67 @@
+/// 
+/// sampsonjacob.com
+/// Jacob Sampson
+/// 
+
+/* Nav */
+
+.nav {
+    max-width: 100%;
+    width: 27em;
+    position: relative;
+    display: block;
+    
+    cursor: default;
+    opacity: 0.95;
+    text-align: center;
+
+    &__header {
+        padding: 3em;
+        position: relative;
+        
+        background-color: #fff;
+        // border-radius: 5px;
+        // box-shadow: 1px 1px 5px black;
+        z-index: -5;
+    }
+
+    &__color-swatch {
+        width: 100%;
+        height: 30%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        // background-color: rgb(49, 151, 100);
+        // background-image: linear-gradient(60deg, rgb(119, 166, 182) 5%, rgba(0, 228, 255, 0.35)), url("../../resources/images/bg.jpg");
+        background-image: linear-gradient(60deg, $fg-muted 5%, $fg-bright);
+        // border-radius: 5px 5px 0 0;
+    }
+
+    &__profile {
+        position: relative;
+        display: block;
+        margin-bottom: 1.5em;
+    }
+
+    &__pic {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+
+        border-radius: 50%;
+        box-shadow: 0 0 0 1em #fff;
+    }
+
+    &__links {
+        display: inline-block;
+    }
+
+    &__link {
+        display: inline;
+        padding: 2em;
+        margin: 0.5em;
+
+        background-color: white;
+    }
+}

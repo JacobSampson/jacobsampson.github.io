@@ -15,15 +15,12 @@
 
 // Components
 
-@import 'components/card';
 @import 'components/bubbles';
-@import 'components/bubble';
+@import 'components/main';
+@import 'components/nav';
 
 // Layout
 
-@import 'layout/main';
-@import 'layout/nav';
 @import 'layout/page';
 @import 'layout/wrapper';
-@import 'layout/header';
 @import 'layout/footer';

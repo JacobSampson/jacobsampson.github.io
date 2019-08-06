@@ -39,7 +39,7 @@ class ghRepo {
     }
 }
 
-(async () => {
+(async function () {
     let result = await fetch('https://api.github.com/users/JacobSampson/repos');
     let ghRepoInfo = await result.json();
 
@@ -59,17 +59,20 @@ class ghRepo {
 
     return ghRepos;
 })().then((ghRepos) => {
-    let ghContent = document.querySelector('.main-content');
+    let ghContent = document.querySelector('.main__content');
     ghRepos.forEach(ghRepo => {
         let newElement = document.createElement('div');
         newElement.innerHTML = ghRepo.toString();
-        newElement.classList.add('gh-repo');
+        newElement.classList.add('main__gh-repo');
         newElement.classList.add('card');
         
         console.log(ghRepo);
 
         ghContent.appendChild(newElement);
     });
+
+    let main = document.querySelector('.main');
+    main.classList.remove('main--unopened');
 }).catch(() => {
     console.log('Failure');
 });

@@ -1,0 +1,27 @@
+/// 
+/// sampsonjacob.com
+/// Jacob Sampson
+/// 
+
+/* Main */
+
+.main {
+    max-width: 100%;
+    width: 27em;
+    position: relative;
+    
+    cursor: default;
+    opacity: 0.95;
+    text-align: center;
+
+    &--unopened {
+        display: none;
+    }
+    
+    &__content {
+        // margin: 0.5em;
+
+        background-color: white;
+        // border-radius: 5px;
+    }
+}
