@@ -2,6 +2,8 @@ import { generateRepos } from './main-content/gh-repos.js';
 
 
 (function() {
+    document.querySelector('body').classList.remove('is-preload');
+
     let mainContent = document.querySelector('.main__content');
 
     generateRepos().then(repoContent => {

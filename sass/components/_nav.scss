@@ -22,7 +22,6 @@
         
         background-color: #fff;
         // border-radius: 5px;
-        z-index: -5;
 
         &:before {
             content: '';
@@ -41,7 +40,6 @@
         position: relative;
         display: block;
         margin-bottom: 1.5em;
-        z-index: 1;
     }
 
     &__pic {
@@ -67,6 +65,8 @@
         background-color: white;
         border-bottom: solid white 5px;
         cursor: pointer;
+
+        transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
         
         &:hover {
             border-bottom: solid $fg-bright 5px;

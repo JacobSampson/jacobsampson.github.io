@@ -22,24 +22,21 @@
         width: 10%;
         padding: 0;
 
-        opacity: 1;
         cursor: pointer;
     }
     
     &__link {
-        width: 100%;
+        display: block;
+        
+        &:hover {
+            opacity: 0.5;
+            transition:  opacity 0.2s ease;
+            display: block;
+        }
     }
     
     &__icon {
         display: relative;
-        transition: 0.5s;
         width: 100%;
-        
-        opacity: 1;
-        transition: opacity 1.5s;
-
-        &:hover {
-            opacity: 0.4;
-        }
     }
 }
