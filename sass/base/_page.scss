@@ -27,7 +27,9 @@ body {
 body {
 	height: 100%;
 
-	background-color: $bg;
+	background: linear-gradient(-45deg, $bg-1, $bg-2, $bg-3);
+	background-size: 300%;
+	animation: movingGradient 30s ease infinite;
 
 	// Stops initial animations until page loads.
 	&.is-preload {
@@ -35,5 +37,17 @@ body {
 			animation: none !important;
 			transition: none !important;
 		}
+	}
+}
+
+@keyframes movingGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
 	}
 }
