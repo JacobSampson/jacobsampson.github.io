@@ -6,6 +6,41 @@
 /* Info Card */
 
 .info-card {
+    background-color: white;
+    max-width: 100%;
+    width: 27em;
+    position: relative;
+    display: block;
 
-    
+    &:before {
+        content: '';
+        background-color: violet;
+        width: 20%;
+        height: 100%;
+        float: left;
+    }
+
+    &--failed {
+        background-color: red;
+    }
+
+    &--language-css {
+        background-color: blue;
+    }
+
+    &__language {
+
+    }
+
+    &__title {
+
+    }
+
+    &__description {
+
+    }
+
+    &__date {
+
+    }
 }

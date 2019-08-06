@@ -1,4 +1,4 @@
-import { generateRepos } from './gh-repos/gh-repos.js';
+import { generateRepos } from './main-content/gh-repos.js';
 
 
 (function() {
