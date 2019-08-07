@@ -8,6 +8,7 @@
 .main {
     max-width: 100%;
     width: 27em;
+    height: 0%;
     position: relative;
     
     cursor: default;
@@ -15,7 +16,7 @@
     text-align: center;
 
     &--unopened {
-        display: none;
+        height: 100&;
     }
     
     &__content {
@@ -23,5 +24,9 @@
 
         background-color: white;
         // border-radius: 5px;
+
+        &--opened {
+
+        }
     }
 }

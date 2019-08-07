@@ -42,23 +42,22 @@ class Repo {
 async function generateRepos() {
     try {
         const repos = await getRepos();
-        return repos.forEach(repo =>
+        return repos.map(repo =>
             `
-            <a class='info-card info-card--language-${repo.language} href='${repo.url}'</a>
-                <p class='info-card__language>${repo.language}</p>
+            <a class='info-card info-card--language-${repo.language}' href='${repo.url}'>
+                <p class='info-card__language'>${repo.language}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
-                <p class='info-card__description>${repo.description}</p>
-                <p class='info-card__date>${repo.createdDate}</p>
+                <p class='info-card__description${repo.description ? "" : " info-card__description--blank"}'>${repo.description || ''}</p>
+                <p class='info-card__date'>${repo.createdDate}</p>
             </a>
             `
-        )
-    }
-    catch (e) {
+        ).join('');
+    } catch (e) {
         return `
-            <a class='info-card info-card--failed' <a href="https://github.com/JacobSampson></a>>
+            <a class='info-card info-card--failed' href='https://github.com/JacobSampson'>
                 <i>Unable to load GitHub repositories</i>
             </a>
-        `
+            `
     }
 }
 
@@ -68,7 +67,7 @@ async function getRepos() {
 
     let repos = [];
 
-    for (repo of await repoInfo) {
+    repoInfo.forEach(function(repo) {
         let newRepo = new Repo(
             repo.name,
             repo.url,
@@ -77,8 +76,8 @@ async function getRepos() {
             repo.created_at
         );
 
-        repos.push(await newRepo);
-    }
+        repos.push(newRepo);
+    });
 
     return repos;
 }
