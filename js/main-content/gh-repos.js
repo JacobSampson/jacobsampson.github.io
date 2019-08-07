@@ -3,8 +3,8 @@ class Repo {
         this._name = name;
         this._url = url;
         this._description = description || null;
-        this._language = language;
-        this._createdDate = createdDate;
+        this._language = ['CSS', 'HTML'].includes(language) ? 'web' : language ? language.toLowerCase() : 'markdown';
+        this._createdDate = new Date(createdDate);
     }
 
     get name() {
@@ -24,18 +24,7 @@ class Repo {
     }
 
     get createdDate() {
-        return this._createdDate;
-    }
-
-    toString() {
-        let repoString = this._name;
-
-        repoString += '<br>url: ' + this._url;
-        repoString += this._description ? '<br>description: ' + this._description : '';
-        repoString += '<br>language: ' + this._language;
-        repoString += '<br>creation date: ' + this._createdDate;
-
-        return repoString;
+        return this._createdDate.toLocaleDateString();
     }
 }
 
@@ -44,8 +33,8 @@ async function generateRepos() {
         const repos = await getRepos();
         return repos.map(repo =>
             `
-            <a class='info-card info-card--language-${repo.language}' href='${repo.url}'>
-                <p class='info-card__language'>${repo.language}</p>
+            <a class='info-card' href='${repo.url}' target='_blank'>
+                <p class='info-card__language info-card__language--language-${repo.language}'>${repo.language.toUpperCase()}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
                 <p class='info-card__description${repo.description ? "" : " info-card__description--blank"}'>${repo.description || ''}</p>
                 <p class='info-card__date'>${repo.createdDate}</p>
@@ -64,13 +53,13 @@ async function generateRepos() {
 async function getRepos() {
     let result = await fetch('https://api.github.com/users/JacobSampson/repos');
     let repoInfo = await result.json();
-
+console.log(repoInfo);
     let repos = [];
 
     repoInfo.forEach(function(repo) {
         let newRepo = new Repo(
             repo.name,
-            repo.url,
+            repo.html_url,
             repo.description,
             repo.language,
             repo.created_at

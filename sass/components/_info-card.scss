@@ -6,41 +6,70 @@
 /* Info Card */
 
 .info-card {
-    background-color: white;
     max-width: 100%;
     width: 27em;
     position: relative;
     display: block;
+    margin: 1em 0;
+    padding: 1em;
+    
+    background-color: white;
+    text-align: right;
+    z-index: 1;
 
-    &:before {
-        content: '';
-        background-color: violet;
-        width: 20%;
-        height: 100%;
-        float: left;
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    &:hover {
+        transform: translateX(1em);
+        opacity: 0.5;
     }
 
     &--failed {
         background-color: red;
     }
 
-    &--language-css {
-        background-color: blue;
-    }
-
     &__language {
+        color: white;
+        padding: 1em;
+        float: left;
 
+        &:before {
+            content: '';
+            height: 100%;
+            width: 8em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: inline-block;
+            padding: 3px;
+
+            z-index: -1;
+            background-color: $fg-bright;
+        }
+
+        &--language-web {
+            &:before {
+                background-color: red;
+            }
+        }
+
+        &--language-python {
+            &:before {
+                background-color: blue;
+            }
+        }
     }
 
     &__title {
-
+        
     }
 
     &__description {
-
+        font-size: 0.8em;
+        padding: 0.8em 0;
     }
 
     &__date {
-
+        font-size: 0.8em;
     }
 }
