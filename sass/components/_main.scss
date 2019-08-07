@@ -11,11 +11,13 @@
     position: relative;
     
     cursor: default;
-    opacity: 0.95;
+    height: 100%;
     text-align: center;
 
+    transition: 2s linear;
+
     &--unopened {
-        // display: none;
+        height: 0;
     }
     
     &__content {

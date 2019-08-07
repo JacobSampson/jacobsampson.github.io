@@ -34,7 +34,7 @@ async function generateRepos() {
         return repos.map(repo =>
             `
             <a class='info-card' href='${repo.url}' target='_blank'>
-                <p class='info-card__language info-card__language--language-${repo.language}'>${repo.language.toUpperCase()}</p>
+                <p class='info-card__language info-card__language--language-${repo.language}'>${repo.language.toLowerCase()}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
                 <p class='info-card__description${repo.description ? "" : " info-card__description--blank"}'>${repo.description || ''}</p>
                 <p class='info-card__date'>${repo.createdDate}</p>

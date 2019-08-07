@@ -8,6 +8,7 @@
 .info-card {
     max-width: 100%;
     width: 27em;
+    height: 7em;
     position: relative;
     display: block;
     margin: 1em 0;
@@ -16,11 +17,11 @@
     background-color: white;
     text-align: right;
     z-index: 1;
+    // border-radius: 5px;
 
     transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
 
     &:hover {
-        transform: translateX(1em);
         opacity: 0.5;
     }
 
@@ -31,7 +32,11 @@
     &__language {
         color: white;
         padding: 1em;
-        float: left;
+        position: absolute;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
 
         &:before {
             content: '';
@@ -49,27 +54,59 @@
 
         &--language-web {
             &:before {
-                background-color: red;
+                background-color: $language-web;
             }
         }
 
         &--language-python {
             &:before {
-                background-color: blue;
+                background-color: $language-python;
+            }
+        }
+
+        &--language-java {
+            &:before {
+                background-color: $language-java;
+            }
+        }
+
+        &--language-java-script {
+            &:before {
+                background-color: $language-java-script;
+            }
+        }
+
+        &--language-c-sharp {
+            &:before {
+                background-color: $language-c-sharp;
             }
         }
     }
 
     &__title {
-        
+        font-size: 1.1em;
     }
 
     &__description {
         font-size: 0.8em;
-        padding: 0.8em 0;
+        padding: 0;
+        padding-left: 30%;
+        text-align: right;
+        width: 100%;
+        height: 3em;
+        
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     &__date {
         font-size: 0.8em;
+    }
+
+    @media only screen and (min-width: 470px) {
+        &:hover {
+            transform: translateX(1em);
+        }    
     }
 }
