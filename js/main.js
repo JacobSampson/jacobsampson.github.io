@@ -21,7 +21,7 @@ import { Nav } from './models/nav.js';
     });
 })();
 
-function setMainContent(main, content, selected) {
+function setMainContent(main, content, target) {
     // Set main content as being active
     if (document.querySelector('.main').classList.contains('main--unopened')) {
         document.querySelector('.main').classList.remove('main--unopened');
@@ -33,7 +33,7 @@ function setMainContent(main, content, selected) {
     document.querySelectorAll('.nav__link--selected').forEach(el => {
         el.classList.remove('nav__link--selected');
     });
-    selected.classList.add('nav__link--selected');
+    target.classList.add('nav__link--selected');
     
     setTimeout(() => {
         main.innerHTML = content;
