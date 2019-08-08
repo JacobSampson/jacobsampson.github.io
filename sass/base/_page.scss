@@ -32,6 +32,8 @@ body {
 	background-attachment: fixed;
 	animation: movingGradient 30s ease infinite;
 
+	overflow-y: scroll;
+
 	// Stops initial animations until page loads.
 	&.is-preload {
 		*, *:before, *:after {

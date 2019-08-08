@@ -13,8 +13,7 @@
     
     cursor: default;
     text-align: center;
-
-
+    background-color: white;
 
     &__header {
         padding: 3em;
@@ -36,6 +35,10 @@
         }
     }
 
+    &__heading {
+        font-size: 2em;
+    }
+
     &__profile {
         position: relative;
         display: block;
@@ -55,25 +58,28 @@
         display: table;
         table-layout: fixed;
         width: 100%;
-        margin-bottom: 2em;
     }
 
     &__link {
         padding: 2em;
         display: table-cell;
 
-        background-color: white;
-        border-bottom: solid white 5px;
+        border-bottom: solid white 7px;
+        user-select: none;
         cursor: pointer;
 
-        transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+        transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
         
         &:hover {
-            border-bottom: solid $fg-bright 5px;
+            border-bottom: solid $fg-bright 7px;
         }
 
         &:not(:last-child) {
             border-right: solid rgba(0, 0, 0, 0.2) 1px;
+        }
+
+        &--selected {
+            border-bottom: solid $fg-bright 7px;
         }
     }
 }

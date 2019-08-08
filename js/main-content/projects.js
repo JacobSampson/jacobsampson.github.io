@@ -28,13 +28,13 @@ class Repo {
     }
 }
 
-async function generateRepos() {
+async function loadProjects() {
     try {
-        const repos = await getRepos();
+        const repos = await loadRepos();
         return repos.map(repo =>
             `
             <a class='info-card' href='${repo.url}' target='_blank'>
-                <p class='info-card__language info-card__language--language-${repo.language}'>${repo.language.toLowerCase()}</p>
+                <p class='info-card__tag info-card__tag--language-${repo.language}'>${repo.language.toLowerCase()}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
                 <p class='info-card__description${repo.description ? "" : " info-card__description--blank"}'>${repo.description || ''}</p>
                 <p class='info-card__date'>${repo.createdDate}</p>
@@ -44,16 +44,23 @@ async function generateRepos() {
     } catch (e) {
         return `
             <a class='info-card info-card--failed' href='https://github.com/JacobSampson'>
-                <i>Unable to load GitHub repositories</i>
+                <p class='info-card__tag'>no projects</p>
+                <h2 class='info-card__title'>Failure</h2>
+                <p class='info-card__description'>Unable to load projects from GitHub</p>
+                <p class='info-card__date'>${(new Date()).toLocaleDateString()}</p>
             </a>
             `
     }
 }
 
-async function getRepos() {
-    let result = await fetch('https://api.github.com/users/JacobSampson/repos');
+async function loadRepos() {
+    let result = await fetch('https://api.github.com/users/JacobSampson/repos', {
+        headers: {
+            'Authorization':  'token 4cd9e36f9619c69adf238fa57c51a6f6b2f20840'
+        }
+    });
     let repoInfo = await result.json();
-console.log(repoInfo);
+
     let repos = [];
 
     repoInfo.forEach(function(repo) {
@@ -71,4 +78,4 @@ console.log(repoInfo);
     return repos;
 }
 
-export { generateRepos };
+export { loadProjects };

@@ -9,7 +9,7 @@
     max-width: 100%;
     width: 27em;
     position: relative;
-    
+
     cursor: default;
     height: 100%;
     text-align: center;
@@ -17,14 +17,21 @@
     transition: 2s linear;
 
     &--unopened {
-        height: 0;
+        display: none;
     }
     
     &__content {
         // border-radius: 5px;
 
-        &--opened {
+        transition: 0.35s cubic-bezier(0.215, 0.610, 0.355, 1);
 
+        &--closed {
+            transform: translateY(-125%);
+            z-index: -1;
+        }
+
+        &--opening {
+            z-index: -1;
         }
     }
 }

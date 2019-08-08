@@ -20,17 +20,17 @@
         <nav class="nav">
             <header class="nav__header">
                 <span class="nav__profile"><img class="nav__pic" img src="resources/images/self.jpg" alt=""></span>
-                <h1>Jacob Sampson</h1>
+                <h1 class="nav__heading">Jacob Sampson</h1>
 
                 <!-- bubbles -->
                 <ul class="bubbles">
-                    <li class="bubbles__bubble">
+                    <li class="bubbles__bubble" hidden>
                         <a class="bubbles__link" href="https://google.com" target="_blank">
                             <img class="bubbles__icon" src="resources/icons/google-circle.png">
                         </a>
                     </li>
                     <li class="bubbles__bubble">
-                        <a class="bubbles__link" href="https://linkedin.com" target="_blank">
+                        <a class="bubbles__link" href="https://www.linkedin.com/in/jacob-i-sampson/" target="_blank">
                             <img class="bubbles__icon" src="resources/icons/linkedin-circle.png">
                             </a
                             ></li>
@@ -43,9 +43,9 @@
                 
             </header>
             <ul class="nav__links">
-                <li class="nav__link">About</li>
-                <li class="nav__link">Projects</li>
-                <li class="nav__link">Experience</li>
+                <li class="nav__link" data-load="about">About</li>
+                <li class="nav__link" data-load="projects">Projects</li>
+                <li class="nav__link" data-load="experience">Experience</li>
             </ul>
         </nav>
 
