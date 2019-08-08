@@ -54,11 +54,7 @@ async function loadProjects() {
 }
 
 async function loadRepos() {
-    let result = await fetch('https://api.github.com/users/JacobSampson/repos', {
-        headers: {
-            'Authorization':  'token 4cd9e36f9619c69adf238fa57c51a6f6b2f20840'
-        }
-    });
+    let result = await fetch('https://api.github.com/users/JacobSampson/repos');
     let repoInfo = await result.json();
 
     let repos = [];
