@@ -25,7 +25,7 @@ function setMainContent(main, content, selected) {
     // Set main content as being active
     if (document.querySelector('.main').classList.contains('main--unopened')) {
         document.querySelector('.main').classList.remove('main--unopened');
-        document.querySelector('.nav').classList.add('main--opened');
+        document.querySelector('.main').classList.add('main--opened');
     } else {
         main.classList.add('main__content--closed');
     }
