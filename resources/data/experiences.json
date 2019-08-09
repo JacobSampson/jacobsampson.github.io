@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Extron Computer Engineering Internship",
+        "imgPath": null,
+        "description": "TODO",
+        "url": null,
+        "startDate": null,
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Embedded C"
+        ]
+    },
+    {
+        "name": "TD Ameritrade Design Studio Internship",
+        "imgPath": null,
+        "description": "TODO",
+        "url": null,
+        "startDate": null,
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Knockout.js",
+            "C#"
+        ]
+    },
+    {
+        "name": "Lotus Technical Website",
+        "imgPath": null,
+        "description": "TODO",
+        "url": "https://lotustechnical.com",
+        "startDate": null,
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+            "HTML",
+            "Sass"
+        ]
+    },
+    {
+        "name": "Physics Research Project",
+        "imgPath": null,
+        "description": "TODO",
+        "url": "https://github.com/JacobSampson/telescope_coverage",
+        "startDate": null,
+        "endDate": null,
+        "technologies": [
+            "Python",
+            "Numpy"
+        ]
+    }
+]

@@ -1,10 +1,10 @@
 class Repo {
-    constructor(name, url, description, language, createdDate) {
-        this._name = name;
-        this._url = url;
-        this._description = description || null;
-        this._language = ['CSS', 'HTML'].includes(language) ? 'web' : language ? language.toLowerCase() : 'markdown';
-        this._createdDate = new Date(createdDate);
+    constructor(repo) {
+        this._name = repo.name;
+        this._url = repo.url;
+        this._description = repo.description || null;
+        this._language = ['CSS', 'HTML'].includes(repo.language) ? 'web' : repo.language ? repo.language.toLowerCase() : 'markdown';
+        this._updatedDate = new Date(repo.updatedDate);
     }
 
     get name() {
@@ -23,25 +23,32 @@ class Repo {
         return this._language;
     }
 
-    get createdDate() {
-        return this._createdDate.toLocaleDateString();
+    get updatedDate() {
+        return this._updatedDate.toLocaleDateString();
+    }
+
+    compareTo(otherRepo) {
+        return otherRepo._updatedDate - this._updatedDate;
     }
 }
 
 async function loadProjects() {
     try {
         const repos = await loadRepos();
-        return repos.map(repo =>
+        console.log(repos);
+        return repos.sort((repo, otherRepo) => repo.compareTo(otherRepo))
+            .map(repo =>
             `
             <a class='info-card' href='${repo.url}' target='_blank'>
                 <p class='info-card__tag info-card__tag--language-${repo.language}'>${repo.language.toLowerCase()}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
                 <p class='info-card__description${repo.description ? "" : " info-card__description--blank"}'>${repo.description || ''}</p>
-                <p class='info-card__date'>${repo.createdDate}</p>
+                <p class='info-card__date'>Updated ${repo.updatedDate}</p>
             </a>
             `
-        ).join('');
+        ).join('');  
     } catch (e) {
+        console.error(e);
         return `
             <a class='info-card info-card--failed' href='https://github.com/JacobSampson'>
                 <p class='info-card__tag'>no projects</p>
@@ -60,13 +67,13 @@ async function loadRepos() {
     let repos = [];
 
     repoInfo.forEach(function(repo) {
-        let newRepo = new Repo(
-            repo.name,
-            repo.html_url,
-            repo.description,
-            repo.language,
-            repo.created_at
-        );
+        let newRepo = new Repo({
+            name: repo.name,
+            url: repo.html_url,
+            description: repo.description,
+            language: repo.language,
+            updatedDate: repo.updated_at
+        });
 
         repos.push(newRepo);
     });
