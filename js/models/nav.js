@@ -1,7 +1,7 @@
 export class Nav {
-    selected = null;
-
     constructor(elem, handlers={}) {
+        this.selected = null;
+
         this._elem = elem;
         elem.onclick = this.onClick.bind(this);
 
