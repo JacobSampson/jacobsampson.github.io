@@ -1,50 +1,55 @@
 [
     {
-        "name": "Extron Computer Engineering Internship",
+        "name": "Computer Engineering Internship",
+        "company": "Extron, a division of LakeLand Companies",
+        "companyURL": null,
         "imgPath": null,
-        "description": "TODO",
+        "description": "Developed software in C on the PIC24, building a system for dynamic liquid level measurement\nWeb development of both an embedded webpage on a PIC24 micro-controller and a .NET client portal",
         "url": null,
         "startDate": null,
         "endDate": null,
         "technologies": [
+            "PIC24",
+            "C",
             "JavaScript",
-            "HTML",
-            "CSS",
-            "Embedded C"
+            "SASS"
         ]
     },
     {
-        "name": "TD Ameritrade Design Studio Internship",
+        "name": "Design Studio Internship",
+        "company": "TD Ameritrade",
+        "companyURL": null,
         "imgPath": null,
-        "description": "TODO",
+        "description": "Full stack developer helped to build a single-page .NET web application that uses sentiment analysis and data visualization to help business analysts at TD Ameritrade understand and improve client experience",
         "url": null,
         "startDate": null,
         "endDate": null,
         "technologies": [
             "JavaScript",
-            "HTML",
-            "CSS",
             "Knockout.js",
             "C#"
         ]
     },
     {
-        "name": "Lotus Technical Website",
+        "name": "Website Development",
+        "company": "Lotus Technical and Lotus Healthcare Solutions",
+        "companyURL": null,
         "imgPath": null,
-        "description": "TODO",
+        "description": "Websites for Lotus Technical and Lotus Healthcare Solutions, employment agencies in Minnesota\nDisplays relevant company information and pulls postings for jobs from an employee-accessed database",
         "url": "https://lotustechnical.com",
         "startDate": null,
         "endDate": null,
         "technologies": [
             "JavaScript",
-            "HTML",
             "Sass"
         ]
     },
     {
         "name": "Physics Research Project",
+        "company": "University of Nebraska-Lincoln Department of Physics and Astronomy",
+        "companyURL": null,
         "imgPath": null,
-        "description": "TODO",
+        "description": "Unpaid research project building a Python application for modeling satellites in geostationary orbit\nDetermines the satellite coverage offered by existing telescopes and potential sites for new telescopes",
         "url": "https://github.com/JacobSampson/telescope_coverage",
         "startDate": null,
         "endDate": null,

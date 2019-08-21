@@ -25,12 +25,13 @@
 
         transition: 0.35s cubic-bezier(0.215, 0.610, 0.355, 1);
 
-        &--closed {
+        &--unopened {
             transform: translateY(-125%);
             z-index: -1;
         }
 
-        &--opening {
+        &--closed {
+            transform: translateY(-125%);
             z-index: -1;
         }
     }

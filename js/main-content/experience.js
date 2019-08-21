@@ -1,16 +1,26 @@
 class Experience {
     constructor(experience) {
         this._name = experience.name;
+        this._company = experience.company;
+        this._companyURL = experience.companyURL;
         this._imgPath = experience.imgPath;
         this._description = experience.description;
         this._url = experience.url;
         this._technologies = experience.technologies;
-        this._startDate = new Date(experience.startDate);
-        this._endDate = new Date(experience.endDate);
+        this._startDate = experience.startDate ? new Date(experience.startDate) : '';
+        this._endDate = experience.endDate ? new Date(experience.endDate) : '';
     }
 
     get name() {
         return this._name;
+    }
+
+    get company() {
+        return this._company;
+    }
+
+    get companyURL() {
+        return this._companyURL;
     }
 
     get url() {
@@ -30,40 +40,61 @@ class Experience {
     }
 
     get startDate() {
-        return this.startDate.toLocaleDateString();
+        return this._startDate ? this._startDate.toLocaleDateString(): '';
     }
 
     get endDate() {
-        return this.endDate.toLocaleDateString();
+        return this._endDate ? this._endDate.toLocaleDateString(): '';
     }
 
     compareTo(otherRepo) {
-        return otherRepo._startDate - this._startDate;
+        if (this._startDate) {
+            return otherRepo._startDate ? otherRepo._startDate - this._startDate : 1;
+        } else {
+            return otherRepo._startDate ? -1 : 1;
+        }
     }
 }
 
 async function loadExperience() {
-    const experience = await loadExperiences()
+    const experiences = await loadExperiences()
 
-    return experiences.map((experience) => {
-        `
+    let experiencesHTML = experiences.sort().map(experience => {
+        let dateLabel = experience.startDate ? "'>" + experience.startDate + experience.endDate ? " - " + experience.endDate : '' : " info-card__date--unused'>";
+        let technologies = experience.technologies.map(technology => {
+            `
+            <li class='info-card__technology'>${technology}</li>
+            `
+        }).join('');
+
+        return `
         <div class='info-card'>
-            <h2 class='info-card__title'>Title</h2>
-            <p class='info-card__date'>Updated</p>
+            <h2 class='info-card__title'>${experience.name}</h2>
+            <p class='info-card__company'>${experience.company}</p>
+            <p class='info-card__date${dateLabel}</p>
+            <p class='info-card__description'>${experience.description}</p>
+            <ul class='info-card__technologies'>
+                ${technologies}
+            </ul>
+            <a class='info-card__company-url' href='${experience.companyURL}'></a>
+            <a class='info-card__link' href='${experience.url}'>link</a>
         </div>
         `
-    });
+    }).join('');
+    return experiencesHTML;
 }
 
 async function loadExperiences() {
-    const res = await fetch('/resources/data/experience.json');
-    const experiencesInfo = await res.json();
+    const result = await fetch('/resources/data/experiences.json');
+    const experiencesInfo = await result.json();
 
     let experiences = [];
 
     experiencesInfo.forEach(function(experience) {
         let newExperience = new Experience({
             name: experience.name,
+            company: experience.company,
+            companyURL: experience.companyURL,
             imgPath: experience.imgPath,
             description: experience.description,
             url: experience.url,
