@@ -81,8 +81,8 @@ async function loadExperience() {
             <ul class='info-card__technologies'>
                 ${technologies}
             </ul>
-            <a class='info-card__company-url' href='${experience.companyURL}'>Comapny Site</a>
-            <a class='info-card__link' href='${experience.url}' hidden>Comapny Site</a>
+            <a class='info-card__company-url' href='${experience.companyURL}'>Company Site</a>
+            <a class='info-card__link' href='${experience.url}' hidden>Company Site</a>
         </div>
         `
     }).join('');
