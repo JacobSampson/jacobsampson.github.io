@@ -8,7 +8,7 @@
 .info-card {
     max-width: 100%;
     width: 27em;
-    height: 7em;
+    height: 7.5em;
     position: relative;
     display: block;
     margin: 1em 0;
@@ -20,7 +20,31 @@
 
     transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
 
-    &:hover {
+    &--highlighted {
+        &-extron {
+            background-color: $experience-extron;
+        }
+        
+        &-td-ameritrade {
+            background-color: $experience-td-ameritrade;
+        }
+        &-lotus-technical {
+            background-color: $experience-lotus-technical;
+        }
+        &-unl-physics {
+            background-color: $experience-unl-physics;
+        }
+    }
+
+    &--flex {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        text-align: left;
+    }
+
+    &--hoverable:hover {
         transform: scale(0.95);
     }
 
@@ -65,9 +89,9 @@
             }
         }
 
-        &--language-java-script {
+        &--language-javascript {
             &:before {
-                background-color: $language-java-script;
+                background-color: $language-javascript;
             }
         }
 
@@ -79,7 +103,29 @@
     }
 
     &__title {
-        font-size: 1.1em;
+        font-size: 1.3em;
+
+        &--highlighted {
+            &:before {
+                content: '';
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: inline-block;
+                padding: 3px;
+    
+                z-index: -1;
+                background-color: white;
+                // border-bottom-left-radius:50%;
+                border-bottom-right-radius: 50%;
+            }
+        }
+    }
+
+    &__section-title {
+        font-size: 1.2em;
     }
 
     &__description {

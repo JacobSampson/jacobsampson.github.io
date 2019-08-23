@@ -39,7 +39,7 @@ async function loadProjects() {
         return repos.sort((repo, otherRepo) => repo.compareTo(otherRepo))
             .map(repo =>
             `
-            <a class='info-card' href='${repo.url}' target='_blank'>
+            <a class='info-card info-card--hoverable' href='${repo.url}' target='_blank'>
                 <p class='info-card__tag info-card__tag--language-${repo.language}'>${repo.language.toLowerCase()}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
                 <p class='info-card__description${repo.description ? "" : " info-card__description--blank"}'>${repo.description || ''}</p>
