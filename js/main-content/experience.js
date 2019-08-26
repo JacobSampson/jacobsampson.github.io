@@ -8,8 +8,8 @@ class Experience {
         this._description = experience.description;
         this._url = experience.url;
         this._technologies = experience.technologies;
-        this._startDate = experience.startDate ? new Date(experience.startDate) : '';
-        this._endDate = experience.endDate ? new Date(experience.endDate) : '';
+        this._startDate = experience.startDate;
+        this._endDate = experience.endDate;
     }
 
     get id() {
@@ -45,11 +45,11 @@ class Experience {
     }
 
     get startDate() {
-        return this._startDate ? this._startDate.toLocaleDateString(): '';
+        return this._startDate;
     }
 
     get endDate() {
-        return this._endDate ? this._endDate.toLocaleDateString(): '';
+        return this._endDate;
     }
 
     compareTo(otherRepo) {
@@ -65,7 +65,7 @@ async function loadExperience() {
     const experiences = await loadExperiences()
 
     let experiencesHTML = experiences.sort().map(experience => {
-        let dateLabel = experience.startDate ? "'>" + experience.startDate + experience.endDate ? " - " + experience.endDate : '' : " info-card__date--unused'>";
+        let dateLabel = experience.startDate ? " info-card__date--spaced'>" + experience.startDate + (experience.endDate ? " - " + experience.endDate : '') : " info-card__date--unused'>";
         let technologies = experience.technologies.map(technology => {
             `
             <li class='info-card__technology'>${technology}</li>
@@ -77,12 +77,11 @@ async function loadExperience() {
             <h2 class='info-card__title info-card__title--highlighted'>${experience.name}</h2>
             <p class='info-card__section-title'>${experience.company}</p>
             <p class='info-card__date${dateLabel}</p>
-            <p class='info-card__description'>${experience.description}</p>
+            <p class='info-card__text-block'>${experience.description}</p>
             <ul class='info-card__technologies'>
                 ${technologies}
             </ul>
-            <a class='info-card__company-url' href='${experience.companyURL}'>Company Site</a>
-            <a class='info-card__link' href='${experience.url}' hidden>Company Site</a>
+            <a class='info-card__company-url' href='${experience.companyURL}'>${experience.companyURL}</a>
         </div>
         `
     }).join('');
@@ -105,8 +104,8 @@ async function loadExperiences() {
             description: experience.description,
             url: experience.url,
             technologies: experience.technologies,
-            startDate: experiences.startDate,
-            endDate: experiences.endDate
+            startDate: experience.startDate,
+            endDate: experience.endDate
         });
 
         experiences.push(newExperience);

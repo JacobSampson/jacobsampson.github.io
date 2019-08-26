@@ -17,7 +17,8 @@
     background-color: white;
     text-align: right;
     z-index: 1;
-
+    overflow: hidden;
+    
     transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
 
     &--highlighted {
@@ -120,12 +121,22 @@
                 background-color: white;
                 // border-bottom-left-radius:50%;
                 border-bottom-right-radius: 50%;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
             }
+        }
+
+        &--tight {
+            margin-bottom: -.1em;
         }
     }
 
     &__section-title {
         font-size: 1.2em;
+        font-weight: 600;
+
+        &--tight {
+            margin-bottom: -0.1em;
+        }
     }
 
     &__description {
@@ -141,7 +152,32 @@
         overflow: hidden;
     }
 
+    &__text-block {
+        font-size: 1em;
+        margin: 1em 0;
+        line-height: 130%;
+    }
+
     &__date {
         font-size: 0.8em;
+
+        &--unused {
+            display: none;
+        }
+
+        &--spaced {
+            margin-top: 1em;
+        }
+    }
+
+    &__company-url {
+        color: darkgrey;
+        margin: 1em 0;
+
+        transition: 0.1s linear;
+
+        &:hover {
+            color: lightgray;
+        }
     }
 }
