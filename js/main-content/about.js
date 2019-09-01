@@ -32,6 +32,7 @@ function loadAbout() {
             JavaScript | Experience<br>
             Python | Basic<br>
             SQL | Basic<br>
+            C | Basic<br>
             C# | by May 2020<br>
             </p>
             <h3 class='info-card__section-title info-card__section-title--tight'>Technologies</h3>

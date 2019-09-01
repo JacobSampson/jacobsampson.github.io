@@ -28,7 +28,6 @@ import { Nav } from './models/nav.js';
 })();
 
 function setMainContent(main, content, selected) {
-
     // Set main content as being active
     if (document.querySelector('.main').classList.contains('main--unopened')) {
         document.querySelector('.main').classList.remove('main--unopened');
