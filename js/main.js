@@ -13,12 +13,6 @@ import { Nav } from './models/nav.js';
     let projects = dataLoader(mainContent, await loadProjects());
     let experience = dataLoader(mainContent, await loadExperience());
 
-    // Move the nav area to the top of the screen
-    let nav = document.querySelector('.nav');
-    // let distTop = nav.offsetHeight / 4;
-    // let distTop = 200;
-    // nav.style.marginTop = `${distTop}px`;
-
     // Setup the navigation bar
     let navLinks = new Nav(document.querySelector('.nav__links'), {
         'about': about,
@@ -34,6 +28,17 @@ function setMainContent(main, content, selected) {
         document.querySelector('.main').classList.add('main--opened');
     }
 
+    let nav = document.querySelector('.nav');
+    if (!nav.classList.contains('.nav--opened')) {
+        nav.classList.add('.nav--opened');
+
+        // Move the nav area to the top of the screen
+        nav.style.transform = `translateY(-${nav.offsetTop / 2}px)`;
+        nav.style.position = 'absolute';
+    }
+
+    // document.querySelector('.nav').style.transform = `translateY(0px)`;
+
     // Remove the selected tab
     document.querySelectorAll('.nav__link--selected').forEach(el => {
         el.classList.remove('nav__link--selected');
@@ -44,6 +49,11 @@ function setMainContent(main, content, selected) {
     
     setTimeout(() => {
         main.innerHTML = content;
+
+        // Set nav styling
+        nav.style.transform = `translateY(0px)`;
+        nav.style.position = 'relative';
+
         main.classList.remove('main__content--closed');
         main.classList.remove('main__content--unopened');
     }, 250);

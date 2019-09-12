@@ -17,7 +17,7 @@ function loadAbout() {
 
                 Jeffrey S. Raikes School of Computer Science and Management: Selective honors program accepting 30-40
                 underclassmen per year with a curriculum emphasizing the integration of computer programming with
-                business communication and effective<br>
+                business communication and effective leadership<br>
             </p>
             <h3 class='info-card__section-title info-card__section-title--tight'><br>Monticello High School</h3>
             <p class='info-card__text-block'>
