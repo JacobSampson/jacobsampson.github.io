@@ -52,11 +52,11 @@ class Experience {
         return this._endDate;
     }
 
-    compareTo(otherRepo) {
+    compareTo(otherExperience) {
         if (this._startDate) {
-            return otherRepo._startDate ? otherRepo._startDate - this._startDate : 1;
+            return otherExperience._startDate ? otherExperience._startDate - this._startDate : 1;
         } else {
-            return otherRepo._startDate ? -1 : 1;
+            return otherExperience._startDate ? 1 : -1;
         }
     }
 }
@@ -64,7 +64,9 @@ class Experience {
 async function loadExperience() {
     const experiences = await loadExperiences()
 
-    let experiencesHTML = experiences.sort().map(experience => {
+    let experiencesHTML = experiences.sort((experience, otherExperience) => {
+            return experience.compareTo(otherExperience);
+        }).map(experience => {
         let dateLabel = experience.startDate ? " info-card__date--spaced'>" + experience.startDate + (experience.endDate ? " - " + experience.endDate : '') : " info-card__date--unused'>";
         let technologies = experience.technologies.map(technology => {
             `

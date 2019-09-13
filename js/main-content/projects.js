@@ -28,6 +28,12 @@ class Repo {
     }
 
     compareTo(otherRepo) {
+        console.log(this._name);
+        //  Pushes less importaant repo down
+        if (this._name === 'web-dev-portal' || otherRepo._name === 'web-dev-portal') {
+            return this._name === 'web-dev-portal' ? 1 : -1;
+        }
+
         return otherRepo._updatedDate - this._updatedDate;
     }
 }
@@ -36,9 +42,8 @@ async function loadProjects() {
     try {
         const repos = await loadRepos();
         console.log(repos);
-        return repos.sort((repo, otherRepo) => repo.compareTo(otherRepo))
-            .map(repo =>
-            `
+        return repos.sort((repo, otherRepo) => repo.compareTo(otherRepo)).map(repo => {
+            return `
             <a class='info-card info-card--hoverable' href='${repo.url}' target='_blank'>
                 <p class='info-card__tag info-card__tag--language-${repo.language}'>${repo.language.toLowerCase()}</p>
                 <h2 class='info-card__title'>${repo.name}</h2>
@@ -46,7 +51,7 @@ async function loadProjects() {
                 <p class='info-card__date'>Updated ${repo.updatedDate}</p>
             </a>
             `
-        ).join('');  
+        }).join('');  
     } catch (e) {
         console.error(e);
         return `
