@@ -28,7 +28,7 @@ class Repo {
     }
 
     compareTo(otherRepo) {
-        console.log(this._name);
+        // console.log(this._name);
         //  Pushes less importaant repo down
         if (this._name === 'web-dev-portal' || otherRepo._name === 'web-dev-portal') {
             return this._name === 'web-dev-portal' ? 1 : -1;
@@ -41,7 +41,7 @@ class Repo {
 async function loadProjects() {
     try {
         const repos = await loadRepos();
-        console.log(repos);
+        // console.log(repos);
         return repos.sort((repo, otherRepo) => repo.compareTo(otherRepo)).map(repo => {
             return `
             <a class='info-card info-card--hoverable' href='${repo.url}' target='_blank'>
