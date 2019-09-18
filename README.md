@@ -1,4 +1,4 @@
-# sampsonjacob.com
+# <a href="https://sampsonjacob.com">sampsonjacob.com</a>
 
 Personal website in pure JavaScript with styling done using SASS.
 
