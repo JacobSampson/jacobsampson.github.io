@@ -40,10 +40,10 @@
         "description": "Websites for Lotus Technical and Lotus Healthcare Solutions, employment agencies in Minnesota\nDisplays relevant company information and pulls postings for jobs from an employee-accessed database",
         "url": "https://lotustechnical.com",
         "startDate": "May 2019",
-        "endDate": "Present",
+        "endDate": "October 2019",
         "technologies": [
             "JavaScript",
-            "Sass"
+            "SCSS"
         ],
         "id": "lotus-technical"
     },
