@@ -1,6 +1,10 @@
+# <a href="https://jacobsampson.github.io">jacobsampson.github.io</a>
+
+Old personal website in pure JavaScript with styling done using SASS, still hosted on GitHub Pages.
+
 # <a href="https://sampsonjacob.com">sampsonjacob.com</a>
 
-Personal website in pure JavaScript with styling done using SASS.
+View the new site, written in Angular and hosted on Firebase.
 
 **Author**: [Jacob Sampson](https://linkedin.com/in/jacob-i-sampson)
 
