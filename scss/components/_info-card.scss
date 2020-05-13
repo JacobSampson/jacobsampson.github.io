@@ -1,0 +1,183 @@
+/// 
+/// sampsonjacob.com
+/// Jacob Sampson
+/// 
+
+/* Info Card */
+
+.info-card {
+    max-width: 100%;
+    width: 27em;
+    height: 7.5em;
+    position: relative;
+    display: block;
+    margin: 1em 0;
+    padding: 1em;
+    
+    background-color: white;
+    text-align: right;
+    z-index: 1;
+    overflow: hidden;
+    
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    &--highlighted {
+        &-extron {
+            background-color: $experience-extron;
+        }
+        
+        &-td-ameritrade {
+            background-color: $experience-td-ameritrade;
+        }
+        &-lotus-technical {
+            background-color: $experience-lotus-technical;
+        }
+        &-unl-physics {
+            background-color: $experience-unl-physics;
+        }
+    }
+
+    &--flex {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        text-align: left;
+    }
+
+    &--hoverable:hover {
+        transform: scale(0.95);
+    }
+
+    &__tag {
+        color: white;
+        padding: 1em;
+        position: absolute;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+
+        &:before {
+            content: '';
+            height: 100%;
+            width: 8em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: inline-block;
+            padding: 3px;
+
+            z-index: -1;
+            background-color: $fg-bright;
+        }
+
+        &--language-web {
+            &:before {
+                background-color: $language-web;
+            }
+        }
+
+        &--language-python {
+            &:before {
+                background-color: $language-python;
+            }
+        }
+
+        &--language-java {
+            &:before {
+                background-color: $language-java;
+            }
+        }
+
+        &--language-javascript {
+            &:before {
+                background-color: $language-javascript;
+            }
+        }
+
+        &--language-c-sharp {
+            &:before {
+                background-color: $language-c-sharp;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.3em;
+
+        &--highlighted {
+            &:before {
+                content: '';
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: inline-block;
+                padding: 3px;
+    
+                z-index: -1;
+                background-color: white;
+                // border-bottom-left-radius:50%;
+                border-bottom-right-radius: 50%;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        &--tight {
+            margin-bottom: -.1em;
+        }
+    }
+
+    &__section-title {
+        font-size: 1.2em;
+        font-weight: 600;
+
+        &--tight {
+            margin-bottom: -0.1em;
+        }
+    }
+
+    &__description {
+        font-size: 0.8em;
+        padding: 0;
+        padding-left: 35%;
+        text-align: right;
+        width: 100%;
+        height: 3em;
+        
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &__text-block {
+        font-size: 1em;
+        margin: 1em 0;
+        line-height: 130%;
+    }
+
+    &__date {
+        font-size: 0.8em;
+
+        &--unused {
+            display: none;
+        }
+
+        &--spaced {
+            margin-top: 1em;
+        }
+    }
+
+    &__company-url {
+        color: darkgrey;
+        margin: 1em 0;
+
+        transition: 0.1s linear;
+
+        &:hover {
+            color: lightgray;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+/// 
+/// sampsonjacob.com
+/// Jacob Sampson
+/// 
+
+/* Wrapper */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    min-height: 100%;
+
+    &:before {
+        content: '';
+        display: block;
+    }
+}
