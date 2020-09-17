@@ -86,7 +86,7 @@ async function loadExperience() {
             <a class='info-card__company-url' href='${experience.companyURL}'>${experience.companyURL}</a>
         </div>
         `
-    }).join('').replace(/(?:\r\n|\r|\n)/g, '<br><br>');
+    }).join('').replace(/\r\n/g, '<br><br>');
     return experiencesHTML;
 }
 

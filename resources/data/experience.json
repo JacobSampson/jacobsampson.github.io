@@ -1,10 +1,22 @@
 [
     {
+        "name": "Software Developer Intern",
+        "company": "Medtronic",
+        "companyURL": "https://www.medtronic.com",
+        "imgPath": null,
+        "description": "\r\nDesigned and implemented a pattern and pipeline for integration testing micro-services\r\nWorked with the Cardiac Rhythm & Heart Failure group\r\nDocker, Kubernetes, Spring Boot",
+        "url": null,
+        "startDate": "June 2020",
+        "endDate": "Aug 2020",
+        "technologies": [],
+        "id": "medtronic"
+    },
+    {
         "name": "Computer Engineering Internship",
         "company": "Extron",
         "companyURL": "https://www.extroncompany.com",
         "imgPath": null,
-        "description": "Developed software in C on the PIC24, building a system for dynamic liquid level measurement\nWeb development of both an embedded webpage on a PIC24 micro-controller and a .NET client portal",
+        "description": "Developed software in C on the PIC24, building a system for dynamic liquid level measurement\r\nRemotely developed an Ionic app for viewing and updating parameters of agricultural monitoring devices\r\nC, PIC24, JavaScript / TypeScript, Angular Ionic, SASS",
         "url": null,
         "startDate": "May 2019",
         "endDate": "Present",
@@ -15,6 +27,22 @@
             "SASS"
         ],
         "id": "extron"
+    },
+    {
+        "name": "Design Studio Internship",
+        "company": "Microsoft",
+        "companyURL": "https://www.microsoft.com",
+        "imgPath": null,
+        "description": "Investigated relationship between customer configurations and form performance on the Dynamic 365 platform\r\nWrote scripts to parse form usage data to derive useful metrics and recommendations\r\nPython, PySpark, Databricks",
+        "url": null,
+        "startDate": "Jan 2020",
+        "endDate": "May 2020",
+        "technologies": [
+            "JavaScript",
+            "Knockout.js",
+            "C#"
+        ],
+        "id": "microsoft"
     },
     {
         "name": "Design Studio Internship",
@@ -37,7 +65,7 @@
         "company": "Lotus Technical/Lotus Healthcare Solutions",
         "companyURL": "https://lotustechnical.com/",
         "imgPath": "resources/images/lotus-technical.png",
-        "description": "Websites for Lotus Technical and Lotus Healthcare Solutions, employment agencies in Minnesota\nDisplays relevant company information and pulls postings for jobs from an employee-accessed database",
+        "description": "Websites for Lotus Technical and Lotus Healthcare Solutions, employment agencies in Minnesota\r\nDisplays relevant company information and pulls postings for jobs from an employee-accessed database",
         "url": "https://lotustechnical.com",
         "startDate": "May 2019",
         "endDate": "Oct 2019",
@@ -52,7 +80,7 @@
         "company": "UNL Department of Physics and Astronomy",
         "companyURL": "https://www.unl.edu/physics/",
         "imgPath": "resources/images/unl-physics.png",
-        "description": "Unpaid research project building a Python application for modeling satellites in geostationary orbit\nDetermines the satellite coverage offered by existing telescopes and potential sites for new telescopes",
+        "description": "Unpaid research project building a Python application for modeling satellites in geostationary orbit\r\nDetermines the satellite coverage offered by existing telescopes and potential sites for new telescopes",
         "url": "https://github.com/JacobSampson/telescope_coverage",
         "startDate": "Jan 2019",
         "endDate": "Present",
